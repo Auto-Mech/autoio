@@ -1,12 +1,28 @@
 [project]
 name = "autoio"
-requires-python = ">= 3.11"
-version = "2025.6.12"
-dependencies = []
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "Andreas Copan", email = "avcopan@gmail.com" }
+]
+requires-python = ">=3.13"
+dependencies = [
+    "mako",
+    "more-itertools",
+    "numpy",
+    "pint",
+    "pyparsing",
+    "pyyaml",
+    "qcelemental",
+]
+
+[project.scripts]
+autoio = "autoio:main"
 
 [build-system]
-build-backend = "hatchling.build"
 requires = ["hatchling"]
+build-backend = "hatchling.build"
 
 [tool.hatch.build.targets.sdist]
 include = [
@@ -46,4 +62,9 @@ include = [
     "projrot_io",
     "thermp_io",
     "varecof_io",
+]
+
+[dependency-groups]
+dev = [
+    "pytest",
 ]
