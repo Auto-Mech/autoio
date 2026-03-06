@@ -12,6 +12,11 @@ import autoparse.pattern as app
 from ioformat import remove_comment_lines
 from mess_io.reader._label import name_label_dct
 from automol.util.dict_ import invert
+# AVC: Backward compatibility for numpy < 2.0, where the function is called `trapz`
+try:
+    from numpy import trapezoid
+except ImportError:
+    from numpy import trapz as trapezoid
 
 
 def ped_names(input_str):
@@ -87,7 +92,7 @@ def get_ped(pedoutput_str, energy_dct, sp_labels='auto'):
 
         # prob_en = prob_en[prob_en > 0]
         if del_neg:
-            if np.trapz(prob_en.values, x=prob_en.index) < 0:
+            if trapezoid(prob_en.values, x=prob_en.index) < 0:
                 # I don't know how to treat negative probabilities
                 # alternative: set the absolute value? or do nothing
                 prob_en *= 0
@@ -113,7 +118,7 @@ def get_ped(pedoutput_str, energy_dct, sp_labels='auto'):
         #        prob_en = prob_en[prob_en[prob_en < 0].index[-1]+1:]
         #    print(prob_en, '\n')
         # integrate with trapz
-        prob_en /= abs(np.trapz(prob_en.values, x=prob_en.index))
+        prob_en /= abs(trapezoid(prob_en.values, x=prob_en.index))
 
         # if issues : keep only max value like dirac delta
         if any(np.isnan(prob_en.values)) or any(np.isinf(prob_en.values)):
