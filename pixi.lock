@@ -6,6 +6,8 @@ environments:
     - url: https://conda.anaconda.org/Auto-Mech/
     indexes:
     - https://pypi.org/simple
+    options:
+      pypi-prerelease-mode: if-necessary-or-explicit
     packages:
       linux-64:
       - conda: https://conda.anaconda.org/conda-forge/linux-64/_libgcc_mutex-0.1-conda_forge.tar.bz2
@@ -184,6 +186,8 @@ environments:
     - url: https://conda.anaconda.org/Auto-Mech/
     indexes:
     - https://pypi.org/simple
+    options:
+      pypi-prerelease-mode: if-necessary-or-explicit
     packages:
       linux-64:
       - conda: https://conda.anaconda.org/conda-forge/linux-64/_libgcc_mutex-0.1-conda_forge.tar.bz2
@@ -343,6 +347,8 @@ environments:
     - url: https://conda.anaconda.org/Auto-Mech/
     indexes:
     - https://pypi.org/simple
+    options:
+      pypi-prerelease-mode: if-necessary-or-explicit
     packages:
       linux-64:
       - conda: https://conda.anaconda.org/conda-forge/linux-64/_libgcc_mutex-0.1-conda_forge.tar.bz2
@@ -608,10 +614,9 @@ packages:
   timestamp: 1763746042074
 - pypi: ./
   name: autoio
-  version: 0.2025.0
-  sha256: 9720401e7f430caa3b97ef6d736d056eed1eeb9fc08ab5e04d3b132882a216af
+  version: 0.2026.0
+  sha256: b554f06265eb5e8204bc87e109b9dba5df8b8a42163ad747fe0213439cb4c49c
   requires_python: '>=3.11'
-  editable: true
 - conda: https://conda.anaconda.org/conda-forge/linux-64/brotli-1.1.0-hb03c661_4.conda
   sha256: 294526a54fa13635341729f250d0b1cf8f82cad1e6b83130304cbf3b6d8b74cc
   md5: eaf3fbd2aa97c212336de38a51fe404e
